@@ -2,11 +2,11 @@ import React from "react";
 import { Footer } from "../components/Footer";
 import { Navigation } from "../components/Navigation";
 
-interface LayoutProps {
+interface ChildrenProps {
   children: JSX.Element;
 }
 
-export const Layout: React.FC<LayoutProps> = ({ children }) => {
+export const Layout: React.FC<ChildrenProps> = ({ children }) => {
   return (
     <div>
       <Navigation />

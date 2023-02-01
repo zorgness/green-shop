@@ -18,7 +18,7 @@ function classNames(...classes: string[]) {
 
 export const Navigation = () => {
   return (
-    <Disclosure as="nav" className="bg-white sticky top-0 z-10 ">
+    <Disclosure as="nav" className="bg-white sticky top-0 z-10 shadow-lg">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
