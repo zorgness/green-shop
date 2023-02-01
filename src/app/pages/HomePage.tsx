@@ -1,6 +1,5 @@
 import React from "react";
 import { Banner } from "../components/Banner";
-import { Footer } from "../components/Footer";
 import { FooterImageSection } from "../components/FooterImageSection";
 import { Navtab } from "../components/Navtab";
 import { ProductContainer } from "../components/ProductContainer";

@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { HomePage } from "./pages/HomePage";
-import { ScrollToTop } from "./utils/ScrollToTop";
+import { HomePage } from "./app/pages/HomePage";
+import { ScrollToTop } from "./app/utils/ScrollToTop";
 
 function App() {
   return (
