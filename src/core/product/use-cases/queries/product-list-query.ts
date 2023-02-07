@@ -4,7 +4,7 @@ export const createProductListResult = ({
   products: Array<{ id: number; title: string; price: number }>;
 }) =>
   Object.freeze({
-    products: Object.freeze({ products }),
+    products: Object.freeze(products),
   });
 
 export type ProductListResult = ReturnType<typeof createProductListResult>;

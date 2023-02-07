@@ -1,6 +1,3 @@
-import { selectors, useCases } from "../..";
-import { createStore } from "../../../store";
-import { retriveProductList } from "../use-cases";
 import { retriveProductListSUT } from "./retrive-product-list/sut-builder";
 
 describe("retrive product list", () => {

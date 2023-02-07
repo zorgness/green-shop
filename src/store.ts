@@ -4,6 +4,7 @@ import {
   getDefaultMiddleware,
 } from "@reduxjs/toolkit";
 import { productsSlice } from "./core/product/productsSlice";
+import { ProductListQuery } from "./core/product/use-cases/queries";
 
 const rootReducer = combineReducers({
   [productsSlice.name]: productsSlice.reducer,
@@ -12,9 +13,9 @@ const rootReducer = combineReducers({
 export type RootState = ReturnType<typeof rootReducer>;
 
 export const createStore = ({
-  existingProducts = [],
+  productListQuery,
 }: {
-  existingProducts?: Array<{ id: number; title: string; price: number }>;
+  productListQuery?: ProductListQuery;
 }) => {
   const store = configureStore({
     reducer: combineReducers({
@@ -24,7 +25,7 @@ export const createStore = ({
       getDefaultMiddleware({
         thunk: {
           extraArgument: {
-            existingProducts,
+            productListQuery,
           },
         },
       }),

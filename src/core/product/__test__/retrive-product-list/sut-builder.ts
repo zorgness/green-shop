@@ -1,5 +1,6 @@
 import { selectors, useCases } from "../../..";
 import { createStore } from "../../../../store";
+import { createInMemoryProductListQuery } from "../../adaptaters/product-list";
 
 // SUT: system under test
 interface SUTProps {
@@ -24,14 +25,14 @@ export const retriveProductListSUT = (props: SUTProps = {}) => {
       });
     },
     build() {
-      const store = createStore({
+      const productListQuery = createInMemoryProductListQuery({
         existingProducts: props.products,
       });
+      const store = createStore({ productListQuery });
       const selectAllProducts = () =>
         selectors.selectAllProducts(store.getState());
-      const retriveProductList = async () => {
-        await store.dispatch(useCases.retriveProductList());
-      };
+      const retriveProductList = async () =>
+        store.dispatch(useCases.retriveProductList());
 
       return {
         selectAllProducts,
