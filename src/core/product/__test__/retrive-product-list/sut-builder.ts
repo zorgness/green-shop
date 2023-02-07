@@ -10,6 +10,8 @@ interface SUTProps {
     price: number;
   }>;
 }
+
+useCases.retriveProductList(); //?
 export const retriveProductListSUT = (props: SUTProps = {}) => {
   return {
     withoutProducts() {
@@ -32,7 +34,8 @@ export const retriveProductListSUT = (props: SUTProps = {}) => {
       const selectAllProducts = () =>
         selectors.selectAllProducts(store.getState());
       const retriveProductList = async () =>
-        store.dispatch(useCases.retriveProductList());
+        //??? type problem "as any"
+        store.dispatch(useCases.retriveProductList() as any);
 
       return {
         selectAllProducts,
