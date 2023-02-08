@@ -26,4 +26,7 @@ module.exports = {
 
   // Module file extensions for importing
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
+  moduleNameMapper: {
+    ".+\\.(css|scss|png|jpg|svg|jpeg)$": "jest-transform-stub",
+  },
 };
