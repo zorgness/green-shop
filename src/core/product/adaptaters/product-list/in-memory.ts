@@ -5,7 +5,7 @@ export const createInMemoryProductListQuery =
     existingProducts = [],
   }: {
     existingProducts?: ProductListResult["products"];
-  }): ProductListQuery =>
+  } = {}): ProductListQuery =>
   async () => ({
     products: existingProducts,
   });

@@ -4,11 +4,11 @@ import { retriveProductList } from "./use-cases";
 
 export const productsAdapter = createEntityAdapter<Product>();
 
-productsAdapter.getInitialState(); //?
+export const initialState = productsAdapter.getInitialState(); //?
 
 export const productsSlice = createSlice({
   name: "products",
-  initialState: productsAdapter.getInitialState(),
+  initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(retriveProductList.fulfilled, (state, action) => {

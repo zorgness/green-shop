@@ -10,4 +10,9 @@ export const data = [
     title: "Terrarium Japan #1",
     price: 75,
   },
+  {
+    id: 3,
+    title: "Terrarium Bulle #1",
+    price: 90,
+  },
 ];

@@ -1,5 +1,5 @@
 import { selectors, useCases } from "../../..";
-import { createStore } from "../../../../store";
+import { createStore } from "../../../store";
 import { createInMemoryProductListQuery } from "../../adaptaters/product-list";
 
 // SUT: system under test

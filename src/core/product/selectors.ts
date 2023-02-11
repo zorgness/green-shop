@@ -1,4 +1,4 @@
-import { RootState } from "../../store";
+import { RootState } from "../store";
 import { productsAdapter } from "./productsSlice";
 
 const productsSelector = productsAdapter.getSelectors<RootState>(

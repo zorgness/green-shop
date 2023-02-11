@@ -1,21 +1,28 @@
 import { screen, render } from "@testing-library/react";
 import { ProductContainer } from "../components/ProductContainer";
+import { data } from "../../data/dataProduct";
+import { createTestStore } from "../../core/__test__/test-store";
+import { Provider } from "react-redux";
 
 describe("Product List Unit Test Suite", () => {
   test("should show an empty state", () => {
-    render(<ProductContainer products={[]} />);
+    const store = createTestStore({ existingProducts: [] });
+    render(
+      <Provider store={store}>
+        <ProductContainer />
+      </Provider>
+    );
     expect(screen.queryByText(/no product yet/)).toBeInTheDocument();
   });
 
-  test("should load available products", () => {
+  test("should load availables products", () => {
     //arrange
+    const store = createTestStore({ existingProducts: data });
+
     render(
-      <ProductContainer
-        products={[
-          { id: 1, title: "Terrarium Siam #1", price: 55 },
-          { id: 2, title: "Terrarium Japan #1", price: 75 },
-        ]}
-      />
+      <Provider store={store}>
+        <ProductContainer />
+      </Provider>
     );
 
     //assert

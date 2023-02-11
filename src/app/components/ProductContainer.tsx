@@ -1,18 +1,14 @@
 import React from "react";
 import { CardProduct } from "./cards/CardProduct";
 import { ProductHeaderContainer } from "./ProductHeaderContainer";
+import { useSelector } from "react-redux";
+import { selectAllProducts } from "../../core/product/selectors";
 
-interface ProductContainerProps {
-  products?: Array<{
-    id: number;
-    title: string;
-    price: number;
-  }>;
-}
+export const ProductContainer: React.FC = () => {
+  const products = useSelector(selectAllProducts).products;
 
-export const ProductContainer: React.FC<ProductContainerProps> = ({
-  products = [],
-}) => {
+  console.log(products);
+
   if (products.length > 0) {
     return (
       <div className="">
