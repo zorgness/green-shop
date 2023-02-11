@@ -7,8 +7,6 @@ import { selectAllProducts } from "../../core/product/selectors";
 export const ProductContainer: React.FC = () => {
   const products = useSelector(selectAllProducts).products;
 
-  console.log(products);
-
   if (products.length > 0) {
     return (
       <div className="">
