@@ -1,13 +1,24 @@
 import React from "react";
 import img from "../../assets/img2.jpeg";
 
-interface CardProductProps {}
+interface CardProductProps {
+  product: {
+    id: number;
+    title: string;
+    price: number;
+  };
+}
 
-export const CardProduct: React.FC<CardProductProps> = ({}) => {
+export const CardProduct: React.FC<CardProductProps> = ({ product }) => {
+  console.log(product.price);
+
+  const { title, price } = product;
+
   return (
     <div
       className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
       data-testid="product-item"
+      role="product-item"
     >
       <a href="#">
         <img className="rounded-t-lg" src={img} alt="" />
@@ -15,11 +26,11 @@ export const CardProduct: React.FC<CardProductProps> = ({}) => {
       <div className="p-5">
         <a href="#">
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            Terrarium Siam #1
+            {title}
           </h5>
         </a>
         <p className="mb-3 font-normal text-amber-700 dark:text-gray-400">
-          à partir de <strong>76</strong>€
+          à partir de <strong>{price}</strong>€
         </p>
         <a
           href="#"
